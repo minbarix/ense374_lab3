@@ -9,4 +9,12 @@ public class ListElement {
         this.previous = null;
     }
 
+    public ListElement(ListElement temp){
+        data = temp.data;
+    }
+
+    public void setData(int tempData){
+        data = tempData; //check if this works
+    }
+
 }
