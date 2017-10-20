@@ -58,14 +58,16 @@ public class ListElement {
             }
     }
 
-    public void deleteElement(int delete){
+    public ListElement deleteElement(int delete){
         if (delete > size){
             System.out.println("You cannot delete outside the bounds of the list...");
+            return null;
         }
         else if (size == 1){
             ListElement temp = first;
             first = null;
             size--;
+            return temp;
         }
         else if (delete == size){
             ListElement temp2 = first;
@@ -75,12 +77,14 @@ public class ListElement {
             last = previous;
             last.next = null;
             size--;
+            return current;
         }
         else if (delete == 1){
             ListElement temp3 = first;
             ListElement second = first.next;
             first = second;
             size--;
+            return temp3;
         }
         else{
             ListElement temp4 = first;
@@ -90,6 +94,7 @@ public class ListElement {
             ListElement after = current.next;
             temp4.next = after;
             size--;
+            return current;
         }
     }
 
@@ -101,6 +106,5 @@ public class ListElement {
             printThis = printThis.next;
         }
     }
-
 
 }

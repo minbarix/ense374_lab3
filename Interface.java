@@ -25,6 +25,7 @@ public class Interface{
             }
 
             Lab.print();
-          //  ListElement testfunc = Lab.deleteElement(1);
+            ListElement testfunc = Lab.deleteElement(3);
+            Lab.print();
     }
 }
