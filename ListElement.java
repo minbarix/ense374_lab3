@@ -22,7 +22,7 @@ public class ListElement {
         data = tempData; //check if this works
     }
 
-    public addElement(ListElement input){
+    public void addElement(ListElement input){
         ListElement temp = new ListElement(input);
         input.next = null; //creation of next element after this input
 
@@ -36,7 +36,7 @@ public class ListElement {
         }
     }
 
-    public getElement(int retrieve){    //passing the index to retrieve
+    public void getElement(int retrieve){    //passing the index to retrieve
             if (n > size){
                 System.out.println("You cannot access outside the bounds of the list...");
                 return null;
@@ -55,7 +55,7 @@ public class ListElement {
             }
     }
 
-    public deleteElement(int delete){
+    public void deleteElement(int delete){
         if (delete > size){
             System.out.println("You cannot delete outside the bounds of the list...");
         }
