@@ -22,7 +22,17 @@ public class ListElement {
     }
 
     public addElement(ListElement input){
+        ListElement temp = new ListElement(input);
+        input.next = null; //creation of next element after this input
 
+        if(first  != null){ //if there are existing elements
+            last.next = temp; //point last element to new element
+            last = temp;    //set this element to be last
+        }
+        else{
+            first = temp;   //set the new input to be the first and last element
+            last = first;
+        }
     }
 
     public getElement(int retrieve){
@@ -30,7 +40,7 @@ public class ListElement {
     }
 
     public deleteElement(int delete){
-        
+
     }
 
 }
