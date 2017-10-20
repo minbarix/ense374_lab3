@@ -13,8 +13,24 @@ public class ListElement {
         data = temp.data;
     }
 
+    public int getData(){
+        return data;
+    }
+
     public void setData(int tempData){
         data = tempData; //check if this works
+    }
+
+    public addElement(ListElement input){
+
+    }
+
+    public getElement(int retrieve){
+
+    }
+
+    public deleteElement(int delete){
+        
     }
 
 }
