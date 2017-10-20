@@ -40,9 +40,18 @@ public class ListElement {
                 System.out.println("You cannot access outside the bounds of the list...");
                 return null;
             }
-            //return first
-            //return last
-            //return specific location
+           else  if (n == size){    //return when last element is picked
+                return last;
+            }
+            else if (n == 1){   //return if first element is picked
+                return first;
+            }
+            else {  //anywhere in between first and last
+                ListElement get = first;
+                for(int i = 0; i < retrieve; i++)
+                    get = get.next; //traverse until get is at the index to be retrieved 
+                return get;
+            }
     }
 
     public deleteElement(int delete){
