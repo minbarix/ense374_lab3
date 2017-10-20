@@ -36,6 +36,7 @@ public class ListElement {
             first = temp;   //set the new input to be the first and last element
             last = first;
         }
+        size++;
     }
 
     public ListElement getElement(int retrieve){    //passing the index to retrieve
