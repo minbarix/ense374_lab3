@@ -3,6 +3,8 @@ public class ListElement {
     private ListElement previous;
     private int data;
     public int size = 0;
+    private ListElement first;
+    private ListElement last;
 
     public ListElement(){
         data = 0;
@@ -36,15 +38,15 @@ public class ListElement {
         }
     }
 
-    public void getElement(int retrieve){    //passing the index to retrieve
-            if (n > size){
+    public ListElement getElement(int retrieve){    //passing the index to retrieve
+            if (retrieve > size){
                 System.out.println("You cannot access outside the bounds of the list...");
                 return null;
             }
-           else  if (n == size){    //return when last element is picked
+           else  if (retrieve == size){    //return when last element is picked
                 return last;
             }
-            else if (n == 1){   //return if first element is picked
+            else if (retrieve == 1){   //return if first element is picked
                 return first;
             }
             else {  //anywhere in between first and last
@@ -69,7 +71,7 @@ public class ListElement {
             for (int i = 1; i < (delete-1); i++)
                 temp2 = temp2.next;
             ListElement current = last;
-            last = prev;
+            last = previous;
             last.next = null;
             size--;
         }
