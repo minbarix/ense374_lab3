@@ -55,7 +55,19 @@ public class ListElement {
     }
 
     public deleteElement(int delete){
+        if (delete > size){
+            System.out.println("You cannot delete outside the bounds of the list...");
+        }
+        else if (){
+
+        }
+//if there is a single element
+//delete first (size == 1)
+//delete last (delete == size)
+//delete in the middle 
+
 
     }
+
 
 }
