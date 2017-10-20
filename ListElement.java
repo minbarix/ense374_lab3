@@ -2,11 +2,12 @@ public class ListElement {
     private ListElement next;
     private ListElement previous;
     private int data;
+    public int size = 0;
 
     public ListElement(){
-        this.data = 0;
-        this.next = null;
-        this.previous = null;
+        data = 0;
+        next = null;
+        previous = null;
     }
 
     public ListElement(ListElement temp){
@@ -48,7 +49,7 @@ public class ListElement {
             }
             else {  //anywhere in between first and last
                 ListElement get = first;
-                for(int i = 0; i < retrieve; i++)
+                for(int i = 1; i < retrieve; i++)
                     get = get.next; //traverse until get is at the index to be retrieved 
                 return get;
             }
@@ -58,8 +59,34 @@ public class ListElement {
         if (delete > size){
             System.out.println("You cannot delete outside the bounds of the list...");
         }
-        else if (){
-
+        else if (size == 1){
+            ListElement temp = first;
+            first = null;
+            size--;
+        }
+        else if (delete == size){
+            ListElement temp2 = first;
+            for (int i = 1; i < (delete-1); i++)
+                temp2 = temp2.next;
+            ListElement current = last;
+            last = prev;
+            last.next = null;
+            size--;
+        }
+        else if (delete == 1){
+            ListElement temp3 = first;
+            ListElement second = first.next;
+            first = second;
+            size--;
+        }
+        else{
+            ListElement temp4 = first;
+            for (int i = 1; i < (delete-1); i++)
+            temp4 = temp4.next;
+            ListElement current = temp4.next;
+            ListElement after = current.next;
+            temp4.next = after;
+            size--;
         }
 //if there is a single element
 //delete first (size == 1)
