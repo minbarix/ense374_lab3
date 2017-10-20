@@ -27,9 +27,11 @@ public class ListElement {
     public void addElement(ListElement input){
         ListElement temp = new ListElement(input);
         input.next = null; //creation of next element after this input
+        input.previous = null;
 
         if(first  != null){ //if there are existing elements
             last.next = temp; //point last element to new element
+            temp.previous = last;
             last = temp;    //set this element to be last
         }
         else{
@@ -92,9 +94,19 @@ public class ListElement {
             temp4 = temp4.next;
             ListElement current = temp4.next;
             ListElement after = current.next;
+            after.previous = temp4;
             temp4.next = after;
             size--;
             return current;
+        }
+    }
+
+    public void printBackwards(){
+        System.out.println("Uses double-linkedlist to print in reverse: ");
+        ListElement printBack = last;
+        while (printBack != null){
+            System.out.println(printBack.data);
+            printBack = printBack.previous;
         }
     }
 
