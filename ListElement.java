@@ -91,12 +91,15 @@ public class ListElement {
             temp4.next = after;
             size--;
         }
-//if there is a single element
-//delete first (size == 1)
-//delete last (delete == size)
-//delete in the middle 
+    }
 
-
+    public void print(){
+        System.out.println("Internal function for traversal and printing of list elements");
+        ListElement printThis = first;
+        while (printThis != null){
+            System.out.println(printThis.data);
+            printThis = printThis.next;
+        }
     }
 
 
