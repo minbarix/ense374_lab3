@@ -35,8 +35,14 @@ public class ListElement {
         }
     }
 
-    public getElement(int retrieve){
-
+    public getElement(int retrieve){    //passing the index to retrieve
+            if (n > size){
+                System.out.println("You cannot access outside the bounds of the list...");
+                return null;
+            }
+            //return first
+            //return last
+            //return specific location
     }
 
     public deleteElement(int delete){
